@@ -74,7 +74,6 @@ export default function Layout({ children, home }) {
           <Link href="/">← Back to home</Link>
         </div>
       )}
-      <footer className="text-sm text-center bottom-0">Made by Next Js, Tailwind, Golang and a lot of coffee beans</footer>
     </div>
   )
 }

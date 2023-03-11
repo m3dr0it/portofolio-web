@@ -13,7 +13,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="max-w-6xl  mx-auto px-4 pb-10">
+    <div className="max-w-6xl  mx-auto px-4 pb-4">
       <div className="flex md:flex-row justify-between items-center">
         <div className="flex flex-col">
           <Link href="/"/>
