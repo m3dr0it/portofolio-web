@@ -19,7 +19,7 @@ export default function Home({ allPostsData }) {
                 <h3 className="text-lg font-light ">Java Developer At PT. IFG Life </h3>
                 <p className="text-base font-normal text-gray-500 dark:text-gray-400">Develop Payment Module for Insurance Company, Payment Module Integrated to many Payment Gateway, 
                 and each payment routes/directed to which payment gateway that has cheapest fee and best availability </p>
-                <p  className="text-base font-light">Tech Stack : Java ( Quarkus ), PostgreSQL, Kafka, Kong API Gateway</p>
+                <p  className="text-base font-light">Tech Stack : Java ( Springboot ), PostgreSQL, Kafka, Kong API Gateway</p>
             </li> 
             <li className="mb-4 ml-4">
                 <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
