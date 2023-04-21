@@ -2,26 +2,17 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {applyApiCookie} from 'next-universal-cookie';
 
-type Data = {
-  name: string,
-  password: string
-}
-
 type BaseResponse = {
   message : string,
   data : object
 }
 
-type LoginData = {
-  username : string,
-  password : string
-}
 
-export async function getStaticProps(test:LoginData) {
+export async function getStaticProps(jwt:string) {
   try{
-    const postLogin = await fetch('http://localhost:8000/api/v1/login',{
-      method : 'POST',
-      body : JSON.stringify(test)
+    const postLogin = await fetch('http://localhost:8000/api/v1/whoami',{
+      method : 'GET',
+      body : JSON.stringify(jwt)
     }) 
 
     let res = await postLogin.json()
@@ -51,17 +42,15 @@ export default async function handler(
 
   applyApiCookie(req,res)
   switch (req.method) {
-    case 'POST':
-      console.log("api login hitted");
-      
-      let data:LoginData = req.body
-
+    case 'GET':
       let response:BaseResponse = {
         message : 'failed',
         data : {}
       }
 
-      let isLogin = (await getStaticProps(data)).props
+      console.log(req.cookies);
+
+      let isLogin = (await getStaticProps("test")).props
 
       if(isLogin.res.error){
         response.message = isLogin.res.message

@@ -2,14 +2,12 @@ import { setCookie,hasCookie } from "cookies-next"
 import { useEffect, useState } from "react"
 import { useRouter } from 'next/router';
 
-
 export default function(){
     const [loginSuccess,setLoginSuccess] = useState(false)
     const [username,setUsername] = useState('')
     const [password,setPassword] = useState('')
     const router = useRouter();
-
-
+    
     const handleSubmit = async(e) =>{
         e.preventDefault()
             // call your authentication API here
